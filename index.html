@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="criaTabela()">Cria Tabela</button>
+
+    <script>
+        function criaTabela() {
+            const url = 'https://viacep.com.br/ws/57015000/json/';
+
+            let table = document.createElement('table');
+            let headerRow = document.createElement('tr');
+            let headers = [];
+
+            fetch(url)
+                .then(response => response.json())
+                .then(resp => {
+                    
+                    for (data in resp) {
+                        headers.push(data);
+                    }
+
+                    headers.forEach(headerText => {
+                        let header = document.createElement('th');
+                        header.textContent = headerText;
+                        headerRow.appendChild(header);
+                    });
+                    table.appendChild(headerRow);
+
+                    let dataRow = document.createElement('tr');
+                    headers.forEach(header => {
+                        let cell = document.createElement('td');
+                        cell.textContent = resp[header];
+                        dataRow.appendChild(cell);
+                    });
+                    table.appendChild(dataRow);
+
+                    document.body.appendChild(table);
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+    </script>
+</body>
+</html>
