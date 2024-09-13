@@ -1,49 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Atualizando Várias Seções com Fetch API</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <h1>Requisições Simultâneas com Fetch API</h1>
 
-    <button onclick="criaTabela()">Cria Tabela</button>
+    <!-- Seção 1: Atualizada com uma API pública -->
+    <div id="section1" class="section">
+        <h2>Seção 1</h2>
+        <p>Aguarde, carregando dados...</p>
+    </div>
 
-    <script>
-        function criaTabela() {
-            const url = 'https://viacep.com.br/ws/57015000/json/';
+    <!-- Seção 2: Atualizada com uma API pública -->
+    <div id="section2" class="section">
+        <h2>Seção 2</h2>
+        <p>Aguarde, carregando dados...</p>
+    </div>
 
-            let table = document.createElement('table');
-            let headerRow = document.createElement('tr');
-            let headers = [];
+    <!-- Seção 3: Atualizada com uma API pública -->
+    <div id="section3" class="section">
+        <h2>Seção 3</h2>
+        <p>Aguarde, carregando dados...</p>
+    </div>
 
-            fetch(url)
-                .then(response => response.json())
-                .then(resp => {
-                    
-                    for (data in resp) {
-                        headers.push(data);
-                    }
-
-                    headers.forEach(headerText => {
-                        let header = document.createElement('th');
-                        header.textContent = headerText;
-                        headerRow.appendChild(header);
-                    });
-                    table.appendChild(headerRow);
-
-                    let dataRow = document.createElement('tr');
-                    headers.forEach(header => {
-                        let cell = document.createElement('td');
-                        cell.textContent = resp[header];
-                        dataRow.appendChild(cell);
-                    });
-                    table.appendChild(dataRow);
-
-                    document.body.appendChild(table);
-                })
-                .catch(error => console.error('Erro:', error));
-        }
-    </script>
+    <!-- Seção 4: Atualizada com uma API pública -->
+    <div id="section4" class="section">
+        <h2>Seção 4</h2>
+        <p>Aguarde, carregando dados...</p>
+    </div>
+    
 </body>
 </html>
