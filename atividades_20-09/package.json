@@ -1,0 +1,21 @@
+{
+  "name": "pweb2_atividade_06-09-2024",
+  "version": "1.0.0",
+  "description": "- **José Adrian Torres dos Santos**  \r   Email: [jats1@aluno.ifal.edu.br](mailto:jats1@aluno.ifal.edu.br)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script.js",
+    "dev": "nodemon script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriantorress/pweb2_atividade_06-09-2024.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adriantorress/pweb2_atividade_06-09-2024/issues"
+  },
+  "homepage": "https://github.com/adriantorress/pweb2_atividade_06-09-2024#readme"
+}
